@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-apk:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,9 +22,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             git zip unzip openjdk-17-jdk python3-pip autoconf libtool \
-            libtool-bin pkg-config zlib1g-dev libncurses5-dev \
-            libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev \
-            build-essential ccache automake
+            libtool-bin pkg-config zlib1g-dev libncurses-dev \
+            cmake libffi-dev libssl-dev build-essential ccache automake
 
       - name: Install Buildozer
         run: |
